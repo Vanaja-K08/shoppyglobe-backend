@@ -1,8 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+const authRoutes = require("./routes/authRoutes");
+
+
 const app = express();
 app.use(express.json());
+
+// Routes
+app.use("/", authRoutes);
 
 // mongodb+srv://vanajakoppad_db_user:gAJE3rlKw6bjpnb9@cluster0.h52gie8.mongodb.net
 // MongoDB connection
