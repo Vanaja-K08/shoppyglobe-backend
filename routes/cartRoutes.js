@@ -30,4 +30,12 @@ router.put("/:id", auth, async (req, res) => {
   );
   res.json(item);
 });
+
+// DELETE /cart/:id
+router.delete("/:id", auth, async (req, res) => {
+  await Cart.findByIdAndDelete(req.params.id);
+  res.json({ message: "Item removed" });
+});
+
+
 module.exports = router;
